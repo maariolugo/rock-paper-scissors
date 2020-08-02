@@ -1,0 +1,103 @@
+<html>
+    <Script>
+        let options = ["rock", "paper", "scissors"];
+        function computerPlay() {
+            let currentPlay = Math.floor(Math.random()*3);
+            let computerChoice = options[currentPlay];
+            return computerChoice;
+        }
+        function playRound(playerSelection, computerSelection) {
+            playerSelection = playerSelection.toLowerCase();
+            if (playerSelection == computerSelection) {
+                return ("It's a tie")
+            } else if (playerSelection == "rock"){
+                if  (computerSelection == "scissors") {
+                    return ("rock beats scissors, player wins!");
+                } else {
+                    return ("paper beats rock, computer wins!");
+                }
+            } else if (playerSelection == "paper") {
+                if  (computerSelection == "rock"){
+                    return ("paper beats rock, player wins!");
+                } else {
+                    return ("scissors beat paper, computer wins!");
+                }
+            } else {
+                if (computerSelection == "paper") {
+                    return ("scissors beat paper, player wins!");
+                } else {
+                    return ("rock beats paper, computer wins!");
+                }
+            }
+        }
+        function game() {
+            let playerSelection = prompt("rock, paper or scissors?");
+            let computerSelection = computerPlay()
+            let counterPlayer = 0;
+            let counterComp = 0;
+            let roundWinMsg = playRound(playerSelection , computerSelection);
+            let roundWin1 = roundWinMsg;
+            console.log(roundWinMsg)
+            if (roundWin1.includes("tie")) {
+                counterPlayer = counterPlayer + 0;
+            } else if (roundWin1.includes("player")) {
+                counterPlayer = counterPlayer + 1;
+            } else if (roundWin1.includes("computer")) {
+                counterComp = counterComp + 1;
+            }
+            let playerSelection2 = prompt("rock, paper or scissors?");
+            let computerSelection2 = computerPlay()
+            let roundWinMsg2 = playRound(playerSelection2 , computerSelection2);
+            let roundWin2 = roundWinMsg2;
+            console.log(roundWinMsg2);
+            if (roundWin2.includes("tie")) {
+                counterPlayer = counterPlayer + 0;
+            } else if (roundWin2.includes("player")) {
+                counterPlayer = counterPlayer + 1;
+            } else if (roundWin2.includes("computer")) {
+                counterComp = counterComp + 1;
+            }
+            let playerSelection3 = prompt("rock, paper or scissors?");
+            let computerSelection3 = computerPlay()
+            let roundWinMsg3 = playRound(playerSelection3 , computerSelection3);
+            let roundWin3 = roundWinMsg3;
+            console.log(roundWinMsg3);
+            if (roundWin3.includes("tie")) {
+                counterPlayer = counterPlayer + 0;
+            } else if (roundWin3.includes("player")) {
+                counterPlayer = counterPlayer + 1;
+            } else if (roundWin3.includes("computer")) {
+                counterComp = counterComp + 1;
+            }
+            let playerSelection4 = prompt("rock, paper or scissors?");
+            let computerSelection4 = computerPlay()
+            let roundWinMsg4 = playRound(playerSelection4 , computerSelection4);
+            let roundWin4 = roundWinMsg4;
+            console.log(roundWinMsg4);
+            if (roundWin4.includes("tie")) {
+                counterPlayer = counterPlayer + 0;
+            } else if (roundWin4.includes("player")) {
+                counterPlayer = counterPlayer + 1;
+            } else if (roundWin4.includes("computer")) {
+                counterComp = counterComp + 1;
+            }
+            let playerSelection5 = prompt("rock, paper or scissors?");
+            let computerSelection5 = computerPlay()
+            let roundWinMsg5 = playRound(playerSelection5 , computerSelection5);
+            let roundWin5 = roundWinMsg5;
+            console.log(roundWinMsg5);
+            if (roundWin5.includes("tie")) {
+                counterPlayer = counterPlayer + 0;
+            } else if (roundWin5.includes("player")) {
+                counterPlayer = counterPlayer + 1;
+            } else if (roundWin5.includes("computer")) {
+                counterComp = counterComp + 1;
+            }
+            if (counterPlayer > counterComp) {
+                alert("Player wins by " + counterPlayer + "to " + counterComp);
+            } else {
+                alert("Computer wins by " + counterComp + "to " + counterPlayer);
+            }
+        }
+    </Script>
+</html>
